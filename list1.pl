@@ -14,4 +14,4 @@ createList(X,[X|T]) :- enterEle(X1) , createList(X1,T).
 printList([]).
 printList([H|T]) :- write(' '), write(H) , printList(T).
 
-:-initialisation(go).
+:-initialization(go).
