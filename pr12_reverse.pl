@@ -1,14 +1,11 @@
 go :- write('Enter list 1: '),nl,
       createList(L1),
-      write('Enter  list 2: '),nl,
-      createList(L2),
-      conc(L1,L2,L3),
-      write('Concatenation of lists:- '),
-      printList(L3).
+      reverse(L1,L2),
+      write('Reverse of list:- '),
+      printList(L2).
 
-conc([],L1,L1).
-conc([H|T],L,[H|L3]) :- conc(T,L,L3) .
-
+reverse([],[]).
+reverse([H|T],[L|H]) :- reverse(T,L).
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).
