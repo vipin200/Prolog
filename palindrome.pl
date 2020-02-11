@@ -1,11 +1,17 @@
 go :- write('Enter list 1: '),nl,
       createList(L1),
-      m_reverse(L1,L2),
-      write('Reverse of list:- '),
-      printList(L2).
+      reverse(L1,L2),
+      ch_equal(L1,L2,C),
+      write('List is palindrome: '),
+      write(C).
 
-m_reverse([],X,X).
-m_reverse([H|T],Z,Acc) :- m_reverse(T,Z,[H|Acc]).
+ch_equal([],[],'true').
+ch_equal([H|_],[H1|_],C):- H \== H1 , C='false' ,!.
+ch_equal([_|T1],[_|T2],C):- ch_equal(T1,T2,C).
+
+reverse([],[]).
+reverse([H|T],[L|H]) :- reverse(T,L).
+
 enterEle(X) :- write('Enter element:- '),
                 read(X).
 

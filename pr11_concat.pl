@@ -6,7 +6,7 @@ go :- write('Enter list 1: '),nl,
       write('Concatenation of lists:- '),
       printList(L3).
 
-conc([],L1,L1).
+conc([],L, L).
 conc([H|T],L,[H|L3]) :- conc(T,L,L3) .
 
 
