@@ -1,11 +1,18 @@
-go :- write('Enter list 1: '),nl,
-      createList(L1),
-      m_reverse(L1,L2),
+go :- write('Enter list : '),nl,
+      createList(L),
+      m_reverse(L,L1),
       write('Reverse of list:- '),
-      printList(L2).
+      printList(L1).
 
-m_reverse([],X,X).
-m_reverse([H|T],Z,Acc) :- m_reverse(T,Z,[H|Acc]).
+conc([],L,L).
+conc([H|T],L2,[H|L3]):- conc(T,L2,L3).
+
+
+m_reverse(L1,L2) :- rev(L1,[],L2).
+rev([],L,L).
+rev([H|T],L2,L3) :- conc([H],L2,R),
+                    rev(T,R,L3).
+
 enterEle(X) :- write('Enter element:- '),
                 read(X).
 
