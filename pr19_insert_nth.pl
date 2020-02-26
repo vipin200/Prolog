@@ -5,7 +5,7 @@ go :- write('Enter a list: '),nl,
       insert_nth(I, N, L, R), 
       write(R).
 
-insert_nth(I,N,[H|T],[H|R])
+insert_nth(I,N,[H|T],[H|R]):-
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).
