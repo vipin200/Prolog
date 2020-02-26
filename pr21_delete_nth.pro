@@ -2,13 +2,11 @@ go :- write('Enter a list: '),nl,
       createList(L),
       write('Enter nth pos :- '),
       read(N),
-      write('Enter element to be inserted:- '),
-      read(I),
-      insert_nth(I, N, L, R), 
+      delete_nth(N, L, R), 
       write(R).
 
-insert_nth(I,1,L,[I|L]):-!.
-insert_nth(I,N,[H|T],[H|R]):- N1 is N-1 , insert_nth(I,N1,T,R).
+delete_nth(1,[_|T],T):-!.
+delete_nth(N,[H|T],[H|R]):- N1 is N-1 , delete_nth(N1,T,R).
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).
