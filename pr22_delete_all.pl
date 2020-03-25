@@ -3,12 +3,11 @@ go:- write('Enter List'),nl,
      write('Element to be deleted:- '),
      read(X),
      delete_all(X,L,R),
-     write(X).
+     write(R).
 
 delete_all(X,[],[]).  
-delete_all(X,[H|T],R):- X == H,delete_all(X,T,R).
-delete_all(X,[H|T],R):- X \== H,R = [H|R1],
-                        delete_all(X,T,R1).
+delete_all(X,[X|T],R):- delete_all(X,T,R).
+delete_all(X,[H|T],[H|R]):-delete_all(X,T,R).
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).

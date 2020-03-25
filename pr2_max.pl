@@ -3,9 +3,10 @@ go :- write('Input first number: '),
       write('Input second number: '),
       read(Y),
       max(X,Y,R),
+      write('Maximum is: '),
       write(R).
 
-max(A,B,A) :- A >= B.
+max(A,B,X) :- A >= B,!,X = A.
 max(A,B,B).
 
 :- initialization(go).

@@ -1,6 +1,6 @@
-go :- write('Input first number'),
+go :- write('Input first number: '),
       read(X),
-      write('Input second number'),
+      write('Input second number: '),
       read(Y),
       sum(X,Y,R),
       write(R).
