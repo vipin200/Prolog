@@ -3,10 +3,11 @@ go :- write('Enter a list: '),nl,
       write('Enter nth pos :- '),
       read(N),
       nth_element(N, L, X),
-      write(X).
+      write('Element is: '),
+      write(X),nl.
 
-nth_element(1,[H|T],H):-!.
-nth_element(N,[H|T],X):- N1 is N-1 , nth_element(N1,T,X).
+nth_element(1,[H|_],H):-!.
+nth_element(N,[_|T],X):- N1 is N-1 , nth_element(N1,T,X).
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).

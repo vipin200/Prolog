@@ -1,7 +1,8 @@
 go :- write('Enter a list: '),nl,
       createList(L),
       sumList(L,S),
-      write(S).
+      write('Sum is: '),
+      write(S),nl.
 
 sumList([],0).
 sumList([H|T], S) :-   sumList(T,Z),S is H + Z .

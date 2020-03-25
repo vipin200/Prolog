@@ -1,7 +1,7 @@
 go :- write('Enter a list: '),nl,
       createList(L),
       remove_dup(L,X),
-      write(X).
+      write(X),nl.
 
 remove_dup([],[]).
 remove_dup([H|T],X) :- is_member(H,T),!,remove_dup(T,X).
@@ -17,4 +17,4 @@ createList(L1) :- enterEle(X),createList(X,L1).
 createList(-1,[]) :- !.
 createList(X,[X|T]) :- enterEle(X1) , createList(X1,T).
 
-# :-initialization(go).
+:-initialization(go).

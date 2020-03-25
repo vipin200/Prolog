@@ -1,9 +1,11 @@
 go :- write('Enter a list: '),nl,
-      createList(L1),
-      write('Enter X: '),nl,
+      createList(L),
+      write('Enter X: '),
       read(X),
-      is_member(X,L1,C),
-      print(C).
+      is_member(X,L,C),nl,
+      write(X),
+      write(' is a member of '),write(L),write(' :'),
+      write(C),nl.
 
 is_member(_,[],C) :- C = 'false',!.
 is_member(X,[X|_],C) :- C = 'true',!.

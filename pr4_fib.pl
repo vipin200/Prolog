@@ -2,7 +2,7 @@ go :- write('Enter N: '),
       read(N),
       generate_fib(N,T),
       write('Nth term is: '),
-      write(T).
+      write(T),nl.
 generate_fib(0,0):-!.
 generate_fib(1,1):-!.
 generate_fib(2,1):-!.

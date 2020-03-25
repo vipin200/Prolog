@@ -4,7 +4,7 @@ go :- write('Enter list 1: '),nl,
       createList(L2),
       conc(L1,L2,L3),
       write('Concatenation of lists:- '),
-      printList(L3).
+      printList(L3),nl.
 
 conc([],L, L).
 conc([H|T],L,[H|L3]) :- conc(T,L,L3) .

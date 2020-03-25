@@ -2,7 +2,7 @@ go :- write('Enter list : '),nl,
       createList(L),
       m_reverse(L,L1),
       write('Reverse of list:- '),
-      printList(L1).
+      printList(L1),nl.
 
 conc([],L,L).
 conc([H|T],L2,[H|L3]):- conc(T,L2,L3).

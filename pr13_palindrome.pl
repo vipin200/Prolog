@@ -4,8 +4,6 @@ go :- write('Enter list: '),nl,
       write('List is palindrome: '),
       write(C).
 
-
-
 palindrome(L1,C) :- m_reverse(L1,L2),
                     ch_equal(L1,L2,C).
 
@@ -17,6 +15,9 @@ m_reverse(L1,L2) :- rev(L1,[],L2).
 rev([],L,L).
 rev([H|T],L2,L3) :- conc([H],L2,R),
                     rev(T,R,L3).
+
+conc([],L, L).
+conc([H|T],L,[H|L3]) :- conc(T,L,L3) .
 
 enterEle(X) :- write('Enter element:- '),
                 read(X).

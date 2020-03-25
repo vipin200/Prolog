@@ -4,7 +4,7 @@ go :- write('Enter number: '),
       read(Pow),
       power(Num,Pow,Ans),
       write('Ans is : '),
-      write(Ans).
+      write(Ans),nl.
 
 power(Num,0,1):-!.
 power(Num,1,Num):-!.

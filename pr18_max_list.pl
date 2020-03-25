@@ -1,7 +1,8 @@
 go :- write('Enter a list: '),nl,
       createList(L),
       max_List(L,M),
-      write(M).
+      write('Maximum in List: '),
+      write(M),nl.
 
 max_List([H],H):-!.
 max_List([H1,H2|T],M):- H1 >= H2 ,!, X is H1 , max_List([X|T],M).
